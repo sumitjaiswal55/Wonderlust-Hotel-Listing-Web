@@ -1,0 +1,67 @@
+
+<% layout("/layouts/boilerplate") -%>
+
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br> <br>
+        <h2>Add New Listing</h2>
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+
+
+        <div class="md-3"  >
+            <label for="title">Title</label>
+            <input type="text" name="listing[title]" placeholder="Enter title" class="form-control" required />
+            <div class="valid-feedback"> Title looks good</div>
+        </div>
+        
+        <br>
+
+        <div class="md-3">
+         <label for="description">Description</label>
+         <textarea name="listing[description]" placeholder="Enter description" class="form-control" required ></textarea>
+         <div class="invalid-feedback">Write a description</div>
+        </div>
+
+        <br>
+
+        <div class="md-3">
+            <label for="image">Upload Image</label>
+            <input type="file" name="listing[image]"  class="form-control" />
+        </div>
+        
+       <br>
+
+        <div class="row">
+        <div class="md-3 col-md-4">
+        <label for="price">Price</label>
+        <input type="" name="listing[price]" placeholder="Enter price" class="form-control" required />
+        <div class="invalid-feedback"> Enter correct Price</div>
+    </div>
+
+       <br>
+
+        <div class="md-3 col-md-8">
+        <label for="country">Country</label>
+        <input type="text" name="listing[country]" placeholder="Enter country" class="form-control" required />
+        <div class="invalid-feedback"> Country name should be valid</div>
+        
+    </div>
+        </div>
+
+        <br>
+
+        <div class="md-3">
+        <label for="location">Location</label>
+        <input type="text" name="listing[location]" placeholder="Enter location" class="form-control" required />
+        <div class="invalid-feedback"> Location name should be valid</div>
+        </div>
+
+        <br>
+
+        <button type="submit" class=" btn btn-dark new-btn">Submit</button>
+        <br>
+    </form>
+</div>
+</div>
+</body>
