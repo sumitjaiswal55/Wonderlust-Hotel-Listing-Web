@@ -1,0 +1,115 @@
+3. Key Features to Build (MVP)
+  Agar poora Amazon nahi bana sakte, toh bas ye 3 complex features banao jo resume mein chamkein:
+
+    1. Dynamic Pricing & Negotiation System:
+        OLX jaisa chat system jaha price offer button ho.
+
+    2. Distance-Based Matching:
+        Hotel apna location daale aur sirf 50km radius ke farmers dikhein. (Ye dikhata hai tumhe Geo-spatial data aata hai).
+
+    3. Inventory Expiry Logic:
+        Agar Farmer ne HarvestDate 5 din purani daali hai, toh frontend pe "Low Quality/Old Stock" ka warning flag dikhana.
+
+
+
+## AgriBridge ##
+
+AgriBridge
+│
+├── client/                         # React Application
+│   └── src/
+│       ├── assets/                  # Static assets
+│       │   ├── images/              # Images
+│       │   └── icons/               # Icons
+│       │
+│       ├── components/              # Reusable UI components
+│       │   ├── common/              # Shared components
+│       │   │   ├── Button.jsx
+│       │   │   ├── InputField.jsx
+│       │   │   └── Loader.jsx
+│       │   │
+│       │   ├── layout/              # Layout-related UI parts
+│       │   │   ├── Navbar.jsx       # Public navbar
+│       │   │   ├── Footer.jsx
+│       │   │   ├── Sidebar.jsx      # Dashboard sidebar
+│       │   │   └── Topbar.jsx       # Dashboard header
+│       │   │
+│       │   └── specific/            # Page-specific components
+│       │       ├── ProductCard.jsx
+│       │       └── OrderStatusBadge.jsx
+│       │
+│       ├── layouts/                 # Page layout wrappers
+│       │   ├── MainLayout.jsx       # Public pages (Navbar + Footer)
+│       │   └── DashboardLayout.jsx  # Auth pages (Sidebar + Topbar)
+│       │
+│       ├── pages/                   # Application pages
+│       │   ├── public/              # Publicly accessible pages
+│       │   │   ├── LandingPage.jsx
+│       │   │   ├── AboutUs.jsx
+│       │   │   └── Contact.jsx
+│       │   │
+│       │   ├── auth/                # Authentication pages
+│       │   │   ├── Login.jsx
+│       │   │   └── Signup.jsx
+│       │   │
+│       │   ├── farmer/              # Farmer (Seller) dashboard
+│       │   │   ├── FarmerDashboard.jsx
+│       │   │   ├── AddListing.jsx
+│       │   │   ├── MyListings.jsx
+│       │   │   ├── FarmerOrders.jsx
+│       │   │   └── Invoice.jsx
+│       │   │
+│       │   └── buyer/               # Buyer (Hotel/Restaurant) dashboard
+│       │       ├── Marketplace.jsx
+│       │       ├── BuyerOrders.jsx
+│       │       ├── Negotiations.jsx
+│       │       └── Cart.jsx
+│       │
+│       ├── context/                 # Global state management
+│       │   ├── AuthContext.jsx      # Auth state (login/logout)
+│       │   └── ShopContext.jsx      # Cart & filters state
+│       │
+│       ├── services/                # API communication layer
+│       │   ├── api.js               # Axios base setup
+│       │   ├── authService.js       # Auth-related API calls
+│       │   └── listingService.js    # Product CRUD APIs
+│       │
+│       ├── routes/                  # Routing logic
+│       │   ├── AppRoutes.jsx        # All application routes
+│       │   └── ProtectedRoute.jsx   # Auth guard for private routes
+│       │
+│       ├── App.jsx                  # Root React component
+│       └── main.jsx                 # React entry point
+│
+├── server/                          # Node.js + Express API
+│   ├── src/
+│   │   ├── config/                  # Configuration files
+│   │   │   └── db.js                # MongoDB connection
+│   │   │
+│   │   ├── models/                  # Database schemas
+│   │   │   ├── User.js
+│   │   │   ├── Product.js
+│   │   │   └── Order.js
+│   │   │
+│   │   ├── controllers/             # Business logic
+│   │   │   ├── authController.js
+│   │   │   └── productController.js
+│   │   │
+│   │   ├── routes/                  # API routes
+│   │   │   ├── authRoutes.js
+│   │   │   └── productRoutes.js
+│   │   │
+│   │   ├── middlewares/              # Custom middlewares
+│   │   │   ├── authMiddleware.js     # JWT protection
+│   │   │   └── errorMiddleware.js    # Global error handler
+│   │   │
+│   │   ├── utils/                    # Helper utilities
+│   │   │   ├── apiResponse.js        # Standard API response format
+│   │   │   └── cloudinary.js         # Image upload helper
+│   │   │
+│   │   ├── app.js                    # Express app setup
+│   │   └── index.js                  # Server entry point
+│   │
+│   ├── .env                          # Environment variables
+│   ├── .gitignore                    # Ignored files
+│   └── package.json                  # Backend dependencies
